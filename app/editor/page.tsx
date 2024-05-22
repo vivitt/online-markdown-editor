@@ -3,10 +3,11 @@ import Markdown from "react-markdown";
 import { useState } from "react";
 import EditArea from "../components/editArea";
 
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
 
-  const onChange = (e) => {
+  const onChange = (e: ChangeEvent) => {
     setMarkdown(e.target.value);
   };
   return (
