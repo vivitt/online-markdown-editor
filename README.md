@@ -1,8 +1,7 @@
-# Beautiful README
+# 🚧 [WIP] A beautiful online markdown editor
 
-This project is a WIP.
+I wanted a place where I could write my blog posts in markdown with a real-time preview, without the need to switch views.
 
-The motivation behind it is to provide an easy and fast way to create beautiful and complete readme files for different kind of projects.
+While there are a few web apps out there where I could achieve this, couldn't find one with a clean and beautiful user interface that allows me to resize sections to whatever feels comfortable at any moment.
 
-Tech stack includes Next.js and Tailwind.
-And development is being done following TDD practices.
+That's why I decided to create my own online markdown editor using Next.js and Tailwind, inlcuding Vitest for unit testing.
