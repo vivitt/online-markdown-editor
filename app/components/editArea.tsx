@@ -1,8 +1,8 @@
-export default function editArea({ onChange }) {
+export default function EditArea({ onChange }) {
   return (
-    <section>
-      <h2>Edit</h2>
-      <textarea onChange={(e) => onChange(e)}></textarea>
-    </section>
+    <textarea
+      className="resize-none w-full min-h-screen"
+      onChange={(e) => onChange(e)}
+    ></textarea>
   );
 }

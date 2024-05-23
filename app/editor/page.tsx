@@ -1,9 +1,13 @@
 "use client";
-import Markdown from "react-markdown";
+
 import { useState } from "react";
-import EditArea from "../components/editArea";
+import EditArea from "../components/EditArea";
+import Panel from "../components/Panel";
+import Divider from "../components/ResizableHandle";
+import PreviewArea from "../components/PreviewArea";
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
 
@@ -14,11 +18,13 @@ export default function Editor() {
     <main>
       <h1 className="text-5xl">Markdown Editor</h1>
       <div className="flex w-100">
-        <EditArea onChange={onChange}></EditArea>
-        <section>
-          <h2>Preview</h2>
-          <Markdown className="prose">{markdown}</Markdown>
-        </section>
+        <Panel title="Edit">
+          <EditArea onChange={onChange}></EditArea>
+        </Panel>
+
+        <Panel title="Preview">
+          <PreviewArea markdown={markdown}></PreviewArea>
+        </Panel>
       </div>
     </main>
   );
