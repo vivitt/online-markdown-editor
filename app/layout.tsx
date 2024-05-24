@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`bg-dot-pattern  bg-repeat ${inter.className}`}>
         <nav>
           <ul className="flex">
             <li>
