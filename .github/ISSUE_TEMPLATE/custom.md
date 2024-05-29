@@ -1,7 +1,7 @@
 ---
 name: Custom issue template
 about: Basic skeleton for new issues in this project
-title: ''
+title: As a user, ...
 labels: ''
 assignees: ''
 
