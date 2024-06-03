@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import Page from "../app/page";
 
 describe("Home", () => {
@@ -14,5 +14,9 @@ describe("Home", () => {
   test("renders editor's link", () => {
     render(<Page />);
     expect(screen.getByRole("link", { name: "Start creating" })).toBeDefined();
+  });
+
+  test("editor's link navigate to editor route", async () => {
+    // TODO
   });
 });

@@ -16,7 +16,9 @@ export default function Editor() {
     setLines(e.target.value.split("\n"));
   };
   return (
-    <main>
+    <>
+          <h1>Markdown Editor</h1>
+
       <div className="flex flex-col w-100 sm:flex-row">
         <Panel title="Edit">
           <EditArea onChange={onChange} lines={lines}></EditArea>
@@ -26,6 +28,6 @@ export default function Editor() {
           <PreviewArea markdown={markdown}></PreviewArea>
         </Panel>
       </div>
-    </main>
+    </>
   );
 }

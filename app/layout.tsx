@@ -28,7 +28,12 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
+        <main>
         {children}
+        </main>
+        <footer>
+          Vivitt 2024
+        </footer>
       </body>
     </html>
   );

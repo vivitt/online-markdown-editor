@@ -1,47 +1,42 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Editor view test: > renders view 1`] = `
+exports[`Editor view tests: > renders editor view 1`] = `
 <div>
-  <main>
+  <h1>
+    Markdown Editor
+  </h1>
+  <div
+    class="flex flex-col w-100 sm:flex-row"
+  >
     <div
-      class="flex flex-col w-100 sm:flex-row"
+      class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
+      id="droptarget"
     >
-      <div
-        class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
-        id="droptarget"
-      >
+      <div>
         <div>
           <div
-            aria-live="polite"
-            aria-multiline="true"
-            class="flex font-mono "
-            lang="markdown"
-            role="textbox"
-          >
-            <div
-              aria-hidden="true"
-              class="w-5  flex flex-col items-center bg-white px-5"
-              id="gutter"
-            />
-            <textarea
-              aria-autocomplete="list"
-              class="resize-none w-full h-screen focus:outline-0"
-              data-language="markdown"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
-        id="droptarget"
-      >
-        <div>
-          <div
-            class="prose px-3 bg-white "
+            aria-hidden="true"
+            class="w-5  flex flex-col items-center bg-white px-5"
+            id="gutter"
+          />
+          <textarea
+            aria-autocomplete="list"
+            class="resize-none w-full h-screen focus:outline-0"
+            data-language="markdown"
           />
         </div>
       </div>
     </div>
-  </main>
+    <div
+      class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
+      id="droptarget"
+    >
+      <div>
+        <div
+          class="prose px-3 bg-white "
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;
