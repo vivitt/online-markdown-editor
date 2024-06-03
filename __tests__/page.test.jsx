@@ -1,17 +1,18 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, it, expect } from "vitest";
+import { afterEach, describe, expect, test } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
 import Page from "../app/page";
 
-describe("Home test:", () => {
-  it("renders a heading", () => {
+describe("Home", () => {
+  afterEach(cleanup);
+  test("renders Page title", () => {
     render(<Page />);
-    const heading = screen.getByRole("heading", { level: 1 });
-    expect(heading).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Beautiful Readme" })
+    ).toBeDefined();
   });
 
-  it("renders a link", () => {
+  test("renders editor's link", () => {
     render(<Page />);
-    const link = screen.getByRole("link")[0];
-    expect(link).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Start creating" })).toBeDefined();
   });
 });
