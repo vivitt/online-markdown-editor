@@ -13,20 +13,25 @@ exports[`Editor view tests: > renders editor view 1`] = `
       id="droptarget"
     >
       <div>
-        <div>
+        <div
+          class="flex  font-mono"
+        >
           <div
             aria-hidden="true"
-            class="w-5  flex flex-col items-center bg-white px-5"
-            id="gutter"
+            class="w-5 flex flex-col items-center px-5 "
+            id="line-numbers"
           />
           <textarea
             aria-autocomplete="list"
-            class="resize-none w-full h-screen focus:outline-0"
+            class="resize-none  h-screen focus:outline-0"
             data-language="markdown"
           />
         </div>
       </div>
     </div>
+    <div
+      class=" bg-white min-h-screen border-2 rounded-md m-3 py-3 cursor-col-resize"
+    />
     <div
       class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
       id="droptarget"

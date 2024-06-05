@@ -24,8 +24,21 @@ describe("Editor view tests:", () => {
 
   it("textarea value change on change event", () => {
     render(<Page />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getByRole("textbox")
     fireEvent.change(input, { target: { value: "Good Day" } });
     expect(input).toHaveProperty("value", "Good Day");
   });
+
+  it("add a number for each line", () => {
+    render(<Page />);
+    
+    const input = screen.getByRole("textbox")
+    fireEvent.change(input, { target: { value: "Good \n Day" } });
+    const one = screen.getByText('1')
+    const two = screen.getByText('2')
+ 
+    expect(one).toBeDefined()
+    expect(two).toBeDefined()
+  });
+
 });
