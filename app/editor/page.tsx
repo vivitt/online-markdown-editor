@@ -1,9 +1,8 @@
 "use client";
-
 import { useState } from "react";
-import EditArea from "../components/EditArea";
+import PreviewArea from "../components/previewArea";
+import EditArea from "../components/editArea";
 import Panel from "../components/Panel";
-import PreviewArea from "../components/PreviewArea";
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
@@ -19,6 +18,7 @@ function ResizeHandler() {
 
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
+  
   const onChange = (e: ChangeEvent) => {
     setMarkdown(e.target.value);
   };

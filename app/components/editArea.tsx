@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
 
-export default function EditArea({ onChange }) {
+type Props = { 
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+};
+
+export default function EditArea({ onChange }:Props) {
   const [value, setValue] = useState("");
 
   const [lines, setLines] = useState(0);
@@ -17,10 +21,6 @@ export default function EditArea({ onChange }) {
   return (
     <div
       className="flex  font-mono"
-      // role="textbox"
-      // lang="markdown"
-      // aria-multiline="true"
-      // aria-live="polite"
     >
       <div
         id="line-numbers"
