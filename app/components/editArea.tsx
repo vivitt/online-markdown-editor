@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 type Props = { 
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 };
 
 export default function EditArea({ onChange }:Props) {

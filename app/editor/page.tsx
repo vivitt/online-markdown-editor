@@ -19,7 +19,7 @@ function ResizeHandler() {
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
   
-  const onChange = (e: ChangeEvent) => {
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(e.target.value);
   };
 
@@ -28,11 +28,11 @@ export default function Editor() {
       <h1>Markdown Editor</h1>
 
       <div className="flex flex-col w-100 sm:flex-row">
-        <Panel title="Edit">
+        <Panel>
           <EditArea onChange={onChange}></EditArea>
         </Panel>
         <ResizeHandler></ResizeHandler>
-        <Panel title="Preview">
+        <Panel>
           <PreviewArea markdown={markdown}></PreviewArea>
         </Panel>
       </div>
