@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 
-type Props = { 
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+type Props = {
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
-export default function EditArea({ onChange }:Props) {
+export default function EditArea({ onChange }: Props) {
   const [value, setValue] = useState("");
 
   const [lines, setLines] = useState(0);
@@ -19,23 +19,20 @@ export default function EditArea({ onChange }:Props) {
   });
 
   return (
-    <div
-      className="flex  font-mono"
-    >
+    <div className="flex  font-mono">
       <div
         id="line-numbers"
         aria-hidden="true"
         className="w-5 flex flex-col items-center px-5 "
       >
-     
-          {value !== '' &&
-            value.split("\n").map((el, index) => {
-              return (
-                <span className="" key={index + 1}>
-                  {index + 1}
-                </span>
-              );
-            })}
+        {value !== "" &&
+          value.split("\n").map((el, index) => {
+            return (
+              <span className="" key={index + 1}>
+                {index + 1}
+              </span>
+            );
+          })}
       </div>
       <textarea
         aria-autocomplete="list"

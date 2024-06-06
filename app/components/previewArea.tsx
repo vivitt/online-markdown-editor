@@ -1,11 +1,11 @@
 import Markdown from "react-markdown";
-
 import remarkGfm from "remark-gfm";
 
-export default function PreviewArea({
-  markdown 
-}
-) {
+type Props = {
+  markdown: string;
+};
+
+export default function PreviewArea({ markdown }: Props) {
   return (
     <Markdown className="prose px-3 bg-white " remarkPlugins={[remarkGfm]}>
       {markdown}
