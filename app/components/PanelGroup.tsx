@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { PropsWithChildren } from "react";
+import { JsxElement } from "typescript";
 
 type Props = {
- panels: JSX.Element[] ;
- renderPanels: () => {}
+ panels: { id: string,
+  header: string,
+  content: ReactNode
+}[], 
+ renderPanels: (content:string) => React.JSX.Element
 };
 
 export default function PanelGroup(props: PropsWithChildren<Props>) {

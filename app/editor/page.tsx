@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import PreviewArea from "../components/previewArea";
-import EditArea from "../components/editArea";
+import EditArea from "../components/EditArea";
 import Panel from "../components/Panel";
 import PanelGroup from "../components/PanelGroup";
 
@@ -39,7 +39,7 @@ export default function Editor() {
             content: <PreviewArea markdown={markdown}></PreviewArea>,
           },
         ]}
-        renderPanel={(id, content) => {
+        renderPanels={(content) => {
           return <Panel>{content}</Panel>;
         }}
       ></PanelGroup>
