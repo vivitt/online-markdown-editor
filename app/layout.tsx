@@ -31,8 +31,9 @@ export default function RootLayout({
         <main>
         {children}
         </main>
-        <footer className="fixed bottom-0">
-          Vivitt 2024
+        <footer className="fixed bottom-0 bg-slate-100 p-3 w-full flex flex-col items-center justify-center">
+          <p>Created with <span role='img' alt='love'>🖤</span> by <a href="https://github.com/vivitt" target="blank">Vivitt</a></p>
+          <p>©2024</p>
         </footer>
       </body>
     </html>

@@ -19,23 +19,30 @@ function ResizeHandler() {
 
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
-  
+
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(e.target.value);
   };
 
   return (
     <>
-  
-    <PanelGroup>
-        <Panel title="Edit">
-          <EditArea onChange={onChange}></EditArea>
-        </Panel>
-        <Panel title="Preview">
-          <PreviewArea markdown={markdown}></PreviewArea>
-        </Panel>
-        </PanelGroup>
-    
+      <PanelGroup
+        panels={[
+          {
+            id: "edit",
+            header: "Edit",
+            content: <EditArea onChange={onChange}></EditArea>,
+          },
+          {
+            id: "preview",
+            header: "Preview",
+            content: <PreviewArea markdown={markdown}></PreviewArea>,
+          },
+        ]}
+        renderPanel={(id, content) => {
+          return <Panel>{content}</Panel>;
+        }}
+      ></PanelGroup>
     </>
   );
 }
