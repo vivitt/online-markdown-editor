@@ -3,6 +3,7 @@ import { useState } from "react";
 import PreviewArea from "../components/previewArea";
 import EditArea from "../components/editArea";
 import Panel from "../components/Panel";
+import PanelGroup from "../components/PanelGroup";
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
@@ -25,17 +26,16 @@ export default function Editor() {
 
   return (
     <>
-      <h1>Markdown Editor</h1>
-
-      <div className="flex flex-col w-100 sm:flex-row">
-        <Panel>
+  
+    <PanelGroup>
+        <Panel title="Edit">
           <EditArea onChange={onChange}></EditArea>
         </Panel>
-        <ResizeHandler></ResizeHandler>
-        <Panel>
+        <Panel title="Preview">
           <PreviewArea markdown={markdown}></PreviewArea>
         </Panel>
-      </div>
+        </PanelGroup>
+    
     </>
   );
 }

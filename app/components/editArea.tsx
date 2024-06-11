@@ -37,7 +37,7 @@ export default function EditArea({ onChange }: Props) {
       <textarea
         aria-autocomplete="list"
         data-language="markdown"
-        className="resize-none  h-screen focus:outline-0"
+        className="resize-none w-full h-screen focus:outline-0"
         onChange={(e) => {
           onChange(e);
           setValue(e.target.value);

@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-dot-pattern  bg-repeat ${inter.className}`}>
-        <nav>
-          <ul className="flex">
-            <li>
+      <body className={`${inter.className}`}>
+        <nav className="bg-slate-50 border-b h-10 ">
+          <ul className="flex items-center">
+            <li className="p-2">
               <Link href="./">Home</Link>
             </li>
             <li>
@@ -31,7 +31,7 @@ export default function RootLayout({
         <main>
         {children}
         </main>
-        <footer>
+        <footer className="fixed bottom-0">
           Vivitt 2024
         </footer>
       </body>

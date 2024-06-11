@@ -9,7 +9,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
     class="flex flex-col w-100 sm:flex-row"
   >
     <div
-      class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
+      class=" bg-white w-full max-w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
       id="droptarget"
     >
       <div>
@@ -23,7 +23,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
           />
           <textarea
             aria-autocomplete="list"
-            class="resize-none  h-screen focus:outline-0"
+            class="resize-none w-full h-screen focus:outline-0"
             data-language="markdown"
           />
         </div>
@@ -33,12 +33,12 @@ exports[`Editor view tests: > renders editor view 1`] = `
       class=" bg-white min-h-screen border-2 rounded-md m-3 py-3 cursor-col-resize"
     />
     <div
-      class=" bg-white w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
+      class=" bg-white w-full max-w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
       id="droptarget"
     >
       <div>
         <div
-          class="prose px-3 bg-white "
+          class="prose px-3 flex bg-white "
         />
       </div>
     </div>
