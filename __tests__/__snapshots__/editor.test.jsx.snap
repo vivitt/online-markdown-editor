@@ -2,17 +2,22 @@
 
 exports[`Editor view tests: > renders editor view 1`] = `
 <div>
-  <h1>
-    Markdown Editor
-  </h1>
   <div
-    class="flex flex-col w-100 sm:flex-row"
+    class="md:flex flex-wrap relative w-full"
   >
     <div
-      class=" bg-white w-full max-w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
-      id="droptarget"
+      class="w-3/6"
     >
-      <div>
+      <button
+        class="border-r border-t border-l rounded-sm p-2"
+      >
+         
+        Edit
+         
+      </button>
+      <div
+        class="border"
+      >
         <div
           class="flex  font-mono"
         >
@@ -30,15 +35,20 @@ exports[`Editor view tests: > renders editor view 1`] = `
       </div>
     </div>
     <div
-      class=" bg-white min-h-screen border-2 rounded-md m-3 py-3 cursor-col-resize"
-    />
-    <div
-      class=" bg-white w-full max-w-full min-h-screen border-2 rounded-md m-3 py-3 shadow-md has-[:focus]:outline "
-      id="droptarget"
+      class="w-3/6"
     >
-      <div>
+      <button
+        class="border-r border-t border-l rounded-sm p-2"
+      >
+         
+        Preview
+         
+      </button>
+      <div
+        class="border"
+      >
         <div
-          class="prose px-3 flex bg-white "
+          class="prose px-3 w-full bg-white  h-screen"
         />
       </div>
     </div>

@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <nav className="bg-slate-50 border-b h-10 ">
+          <h1>Markdown Editor</h1>
           <ul className="flex items-center">
             <li className="p-2">
               <Link href="./">Home</Link>
@@ -32,7 +33,7 @@ export default function RootLayout({
         {children}
         </main>
         <footer className="fixed bottom-0 bg-slate-100 p-3 w-full flex flex-col items-center justify-center">
-          <p>Created with <span role='img' alt='love'>🖤</span> by <a href="https://github.com/vivitt" target="blank">Vivitt</a></p>
+          <p>Markdown Editor created with <span role='img' alt='love'>🖤</span> by <a href="https://github.com/vivitt" target="blank">Vivitt</a></p>
           <p>©2024</p>
         </footer>
       </body>

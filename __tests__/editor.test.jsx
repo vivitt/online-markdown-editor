@@ -10,10 +10,20 @@ describe("Editor view tests:", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("includes view heading", () => {
+  it("renders edit panel", () => {
     render(<Page />);
-    const heading = screen.getByText("Markdown Editor");
-    expect(heading).toBeDefined();
+    const editSection = screen.getByText("Edit");
+    expect(editSection).toBeDefined();
+
+  
+  });
+
+  it("renders preview panel", () => {
+    render(<Page />);
+
+
+    const previewSection = screen.getByText("Preview");
+    expect(previewSection).toBeDefined();
   });
 
   it("renders a textArea", () => {
