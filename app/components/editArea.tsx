@@ -25,7 +25,8 @@ export default function EditArea({ onChange }: Props) {
         aria-hidden="true"
         className="w-5 flex flex-col items-center px-5 "
       >
-        {value !== "" &&
+        1
+        {value.split("\n").length > 1 &&
           value.split("\n").map((el, index) => {
             return (
               <span className="" key={index + 1}>
@@ -37,13 +38,16 @@ export default function EditArea({ onChange }: Props) {
     
       <textarea
       id='edit'
+      name="edit"
         aria-autocomplete="list"
         data-language="markdown"
         className="resize-none w-full h-screen focus:outline-0"
         onChange={(e) => {
           onChange(e);
           setValue(e.target.value);
+          console.log(value.split("\n"))
         }}
+        placeholder="Add some markdown here..."
       ></textarea>
     </div>
   );

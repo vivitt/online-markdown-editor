@@ -71,4 +71,12 @@ describe("Editor view tests:", () => {
     expect(screen.getAllByText("1")).toHaveLength(1)
     expect(screen.queryAllByText("2")).toHaveLength(0)
   });
+
+  it.only("input text is rendered in preview area as <p> element", async () => {
+    render(<Page />);
+    const input = screen.getByRole("textbox");
+    input.focus()
+    await user.keyboard('hola');
+    expect(screen.getAllByRole("p")).toHaveLength(1)
+  });
 });
