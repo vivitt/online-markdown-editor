@@ -30,6 +30,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
             aria-autocomplete="list"
             class="resize-none w-full h-screen focus:outline-0"
             data-language="markdown"
+            id="edit"
           />
         </div>
       </div>

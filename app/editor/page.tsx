@@ -1,11 +1,10 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import PreviewArea from "../components/previewArea";
 import EditArea from "../components/EditArea";
 import Panel from "../components/Panel";
 import PanelGroup from "../components/PanelGroup";
 
-type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
 function ResizeHandler() {
   const resize = () => {};

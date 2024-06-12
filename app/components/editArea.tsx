@@ -34,7 +34,9 @@ export default function EditArea({ onChange }: Props) {
             );
           })}
       </div>
+    
       <textarea
+      id='edit'
         aria-autocomplete="list"
         data-language="markdown"
         className="resize-none w-full h-screen focus:outline-0"

@@ -1,8 +1,11 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, it, expect } from "vitest";
+import userEvent from "@testing-library/user-event";
+
 import Page from "../app/editor/page";
 
 describe("Editor view tests:", () => {
+  const user = userEvent.setup();
   afterEach(cleanup);
 
   it("renders editor view", () => {
@@ -29,22 +32,43 @@ describe("Editor view tests:", () => {
     expect(textarea).toBeDefined();
   });
 
-  it("textarea value change on change event", () => {
+  it("textarea value change when user type", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
-    fireEvent.change(input, { target: { value: "Good Day" } });
-    expect(input).toHaveProperty("value", "Good Day");
+    input.focus()
+    await user.keyboard("Good day");
+    expect(input).toHaveProperty("value", "Good day");
   });
 
-  it("add a number for each line", () => {
+  it("preview area value match edit area value", async () => {
     render(<Page />);
-
     const input = screen.getByRole("textbox");
-    fireEvent.change(input, { target: { value: "Good \n Day" } });
-    const one = screen.getByText("1");
-    const two = screen.getByText("2");
+    input.focus()
+    await user.keyboard("hola");
+    const preview = screen.getByText("hola");
+    expect(preview).toBeDefined();
+  });
 
-    expect(one).toBeDefined();
-    expect(two).toBeDefined();
+  it("doesn't add numbers when input is empty", async () => {
+    render(<Page />);
+    
+    expect(screen.queryAllByText("1")).toHaveLength(0)
+  });
+
+  it("adds a line number when user type", async () => {
+    render(<Page />);
+    const input = screen.getByRole("textbox");
+    input.focus()
+    await user.keyboard("hola");
+    expect(screen.queryAllByText("1")).toHaveLength(1)
+  });
+
+  it("add a number if enter key is pressed in the texarea", async () => {
+    render(<Page />);
+    const input = screen.getByRole("textbox");
+    input.focus()
+    await user.keyboard('[Enter]');
+    expect(screen.getAllByText("1")).toHaveLength(1)
+    expect(screen.queryAllByText("2")).toHaveLength(0)
   });
 });

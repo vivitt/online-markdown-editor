@@ -1,6 +1,5 @@
 import { ReactNode, useState } from "react";
 import { PropsWithChildren } from "react";
-import { JsxElement } from "typescript";
 
 type Props = {
  panels: { id: string,
