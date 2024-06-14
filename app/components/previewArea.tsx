@@ -7,7 +7,7 @@ type Props = {
 
 export default function PreviewArea({ markdown }: Props) {
   return (
-    <Markdown className="prose px-3 w-full bg-white  h-screen" remarkPlugins={[remarkGfm]}>
+    <Markdown className="prose px-3 w-full bg-white h-screen" remarkPlugins={[remarkGfm]}>
       {markdown}
     </Markdown>
   );

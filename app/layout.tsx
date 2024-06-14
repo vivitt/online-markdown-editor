@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Beautiful Readme",
@@ -17,16 +14,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <nav className="bg-slate-50 border-b h-10 ">
-          <h1>Markdown Editor</h1>
-          <ul className="flex items-center">
+      <body className="font-inter">
+        <nav className="bg-slate-50 border-b ">
+          <ul className="flex items-center justify-between">
             <li className="p-2">
-              <Link href="./">Home</Link>
+              <Link href="./"> <h1 className="font-dm text-2xl p-2">Beautiful Readme</h1></Link>
             </li>
+            <div className="p-5">
             <li>
               <Link href="./editor">Editor</Link>
             </li>
+            </div>
           </ul>
         </nav>
         <main>

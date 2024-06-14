@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,4 +19,20 @@
 
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../public/fonts/inter-variablefont_slntwght-webfont.woff"), url("../public/fonts/inter-variablefont_slntwght-webfont.woff2");
+}
+
+@font-face {
+  font-family: "Chivo";
+  font-weight: 300;
+  src: url("../public/fonts/chivomono-variablefont_wght-webfont.woff"), url("../public/fonts/chivomono-variablefont_wght-webfont.woff2");
+}
+
+@font-face {
+  font-family: "DM";
+  src: url("../public/fonts/dmserifdisplay-regular-webfont.woff"), url("../public/fonts/dmserifdisplay-regular-webfont.woff2");
 }

@@ -19,7 +19,7 @@ export default function EditArea({ onChange }: Props) {
   });
 
   return (
-    <div className="flex  font-mono">
+    <div className="flex  font-chivo">
       <div
         id="line-numbers"
         aria-hidden="true"

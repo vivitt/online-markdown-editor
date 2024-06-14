@@ -12,9 +12,15 @@ const config: Config = {
         "dot-pattern": "url('/dot.svg')",
       },
     },
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+      chivo: ["Chivo", "mono"],
+      dm: ["DM", "serif"]
+    },
   },
   plugins: [
     require('@tailwindcss/typography')
   ],
+
 };
 export default config;
