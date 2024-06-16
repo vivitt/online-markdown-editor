@@ -11,9 +11,9 @@ type Props = {
 
 export default function PanelGroup(props: PropsWithChildren<Props>) {
 
-    const [className, setClassName] = useState('');
+  const [className, setClassName] = useState('');
 
-    const handleClick =  (e: React.UIEvent<HTMLButtonElement>) => {};
+  const handleClick =  (e: React.UIEvent<HTMLButtonElement>) => {};
   return (
     <div className="md:flex flex-wrap relative w-full">
         {props.panels.map((child) => (
