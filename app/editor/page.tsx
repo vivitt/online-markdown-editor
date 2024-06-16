@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import PreviewArea from "../components/previewArea";
-import EditArea from "../components/EditArea";
 import Panel from "../components/Panel";
 import PanelGroup from "../components/PanelGroup";
+import EditArea from "../components/EditArea";
+import PreviewArea from "../components/previewArea";
 
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
@@ -19,21 +19,18 @@ export default function Editor() {
           {
             id: "edit",
             header: "Edit",
-            content: <div>Edit</div>,
+            content: <EditArea onChange={onChange}></EditArea>,
           },
           {
             id: "preview",
             header: "Preview",
-            content: <div>Preview</div>,
+            content: <PreviewArea markdown={markdown}></PreviewArea>,
           },
         ]}
         renderPanels={(content) => {
           return <Panel>{content}</Panel>;
         }}
-      >
-        <EditArea onChange={onChange}></EditArea>
-        <PreviewArea markdown={markdown}></PreviewArea>
-      </PanelGroup>
+      ></PanelGroup>
     </>
   );
 }
