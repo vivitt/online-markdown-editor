@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import PreviewArea from "../components/previewArea";
-import EditArea from "../components/EditArea";
-import Panel from "../components/Panel";
-import PanelGroup from "../components/PanelGroup";
+import PreviewArea from "@/components/previewArea";
+import EditArea from "@/components/EditArea";
+import Panel from "@/components/Panel";
+import PanelGroup from "@/components/PanelGroup";
 
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
