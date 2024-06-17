@@ -4,5 +4,5 @@ type Props = {
 };
 
 export default function Panel(props: PropsWithChildren<Props>) {
-  return <div className="bg-white ">{props.children}</div>;
+  return <div className="bg-white">{props.children}</div>;
 }

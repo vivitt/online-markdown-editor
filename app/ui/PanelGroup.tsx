@@ -17,7 +17,7 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
   return (
     <div className="md:flex flex-wrap relative w-full">
         {props.panels.map((child) => (
-          <div key={child.id} className="w-3/6">
+          <div key={child.id} className="md:w-3/6 w-full min-w-80">
            <button onClick={(e) => handleClick(e)} className='border-r border-t border-l rounded-sm p-2' > {child?.header} </button>
            <div className="border">
             {child?.content}
