@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest --coverage ",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "^14.2.4",
     "next": "^14.2.3",
     "react": "^18",
     "react-dom": "^18",
@@ -27,10 +30,11 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^1.6.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",

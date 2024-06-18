@@ -1,6 +1,6 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 type Props = {
-  children: string | JSX.Element | JSX.Element[] | (() => JSX.Element);
+  children: ReactNode;
 };
 
 export default function Panel(props: PropsWithChildren<Props>) {

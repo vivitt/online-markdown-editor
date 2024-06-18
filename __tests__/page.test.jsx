@@ -7,13 +7,18 @@ describe("Home", () => {
   test("renders Page title", () => {
     render(<Page />);
     expect(
-      screen.getByRole("heading", { level: 1, name: "Beautiful Readme" })
+      screen.getByRole("heading", {
+        level: 1,
+        name: "Comfortably edit and preview markdown content.",
+      })
     ).toBeDefined();
   });
 
   test("renders editor's link", () => {
     render(<Page />);
-    expect(screen.getByRole("link", { name: "Start creating" })).toBeDefined();
+    expect(
+      screen.getByRole("link", { name: "edit and preview" })
+    ).toBeDefined();
   });
 
   test("editor's link navigate to editor route", async () => {

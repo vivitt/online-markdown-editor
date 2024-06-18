@@ -35,7 +35,7 @@ describe("Editor view tests:", () => {
   it("textarea value change when user type", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
-    input.focus()
+    input.focus();
     await user.keyboard("Good day");
     expect(input).toHaveProperty("value", "Good day");
   });
@@ -43,40 +43,39 @@ describe("Editor view tests:", () => {
   it("preview area value match edit area value", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
-    input.focus()
+    input.focus();
     await user.keyboard("hola");
     const preview = screen.getByText("hola");
     expect(preview).toBeDefined();
   });
 
-  it("doesn't add numbers when input is empty", async () => {
+  it("there is a 1 line number when input is empty", async () => {
     render(<Page />);
-    
-    expect(screen.queryAllByText("1")).toHaveLength(0)
+    expect(screen.queryAllByText("1")).toHaveLength(1);
   });
 
   it("adds a line number when user type", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
-    input.focus()
+    input.focus();
     await user.keyboard("hola");
-    expect(screen.queryAllByText("1")).toHaveLength(1)
+    expect(screen.queryAllByText("1")).toHaveLength(1);
   });
 
   it("add a number if enter key is pressed in the texarea", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
-    input.focus()
-    await user.keyboard('[Enter]');
-    expect(screen.getAllByText("1")).toHaveLength(1)
-    expect(screen.queryAllByText("2")).toHaveLength(0)
+    input.focus();
+    await user.keyboard("[Enter]");
+    expect(screen.queryAllByText("2")).toHaveLength(1);
+    expect(screen.queryAllByText("3")).toHaveLength(0);
   });
 
-  it.only("input text is rendered in preview area as <p> element", async () => {
+  it("input text is rendered in preview area as <p> element", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
-    input.focus()
-    await user.keyboard('hola');
-    expect(screen.getAllByRole("p")).toHaveLength(1)
+    input.focus();
+    await user.keyboard("hola");
+    expect(screen.getAllByRole("paragraph")).toHaveLength(1);
   });
 });

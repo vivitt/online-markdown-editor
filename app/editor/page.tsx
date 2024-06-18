@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Panel from "../ui/Panel";
 import PanelGroup from "../ui/PanelGroup";
 import EditArea from "../ui/EditArea";
@@ -27,7 +27,7 @@ export default function Editor() {
             content: <PreviewArea markdown={markdown}></PreviewArea>,
           },
         ]}
-        renderPanels={(content) => {
+        renderPanels={(content: ReactNode) => {
           return <Panel>{content}</Panel>;
         }}
       ></PanelGroup>

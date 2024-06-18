@@ -6,7 +6,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
     class="md:flex flex-wrap relative w-full"
   >
     <div
-      class="w-3/6"
+      class="md:w-3/6 w-full min-w-80"
     >
       <button
         class="border-r border-t border-l rounded-sm p-2"
@@ -19,24 +19,32 @@ exports[`Editor view tests: > renders editor view 1`] = `
         class="border"
       >
         <div
-          class="flex  font-mono"
+          class="flex font-chivo"
         >
           <div
             aria-hidden="true"
-            class="w-5 flex flex-col items-center px-5 "
+            class="w-5 flex flex-col items-center px-5"
             id="line-numbers"
-          />
+          >
+            <span
+              class="h-6"
+            >
+              1
+            </span>
+          </div>
           <textarea
             aria-autocomplete="list"
             class="resize-none w-full h-screen focus:outline-0"
             data-language="markdown"
             id="edit"
+            name="edit"
+            placeholder="Add your content here..."
           />
         </div>
       </div>
     </div>
     <div
-      class="w-3/6"
+      class="md:w-3/6 w-full min-w-80"
     >
       <button
         class="border-r border-t border-l rounded-sm p-2"
@@ -49,7 +57,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
         class="border"
       >
         <div
-          class="prose px-3 w-full bg-white  h-screen"
+          class="prose px-3 w-full bg-white h-screen"
         />
       </div>
     </div>
