@@ -6,7 +6,7 @@ type Props = {
 };
 
 export default function EditArea({ onChange }: Props) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(" ");
 
   const [textAreaWidth, setTextAreaWidth] = useState(300);
 
@@ -17,14 +17,10 @@ export default function EditArea({ onChange }: Props) {
         aria-hidden="true"
         className="w-5 flex flex-col items-center px-5"
       >
-        <span className="h-6" key={0}>
-          1
-        </span>
-
-        {value.split("\n").length > 1 &&
+        {value.split("\n").length > 0 &&
           value.split("\n").map((el, index) => {
             return (
-              <span className="h-6" key={index}>
+              <span className="h-6" key={index + 1}>
                 {index + 1}
               </span>
             );
