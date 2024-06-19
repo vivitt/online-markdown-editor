@@ -26,45 +26,55 @@ describe("Editor view tests:", () => {
     expect(previewSection).toBeDefined();
   });
 
-  it("renders a textArea", () => {
+  it("renders two text areas", () => {
     render(<Page />);
-    const textarea = screen.getByRole("textbox", { lang: "markdown" });
-    expect(textarea).toBeDefined();
+    const textarea = screen.getAllByRole("textbox", { lang: "markdown" });
+    expect(textarea).toHaveLength(2);
+  });
+
+  it("one text area has hidden class", () => {
+    // TODO
   });
 
   it("textarea value change when user type", async () => {
     render(<Page />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getAllByRole("textbox")[0];
     input.focus();
     await user.keyboard("Good day");
     expect(input).toHaveProperty("value", "Good day");
   });
 
-  it("preview area value match edit area value", async () => {
+  it("saves input value to localstorage on changes", () => {
+    // TODO
+  });
+
+  it("retrieves value from localstorage on first mount", () => {
+    // TODO
+  });
+
+  it("preview area displays edit area value", async () => {
     render(<Page />);
-    const input = screen.getByRole("textbox");
-    input.focus();
-    await user.keyboard("hola");
-    const preview = screen.getByText("hola");
-    expect(preview).toBeDefined();
+    const preview = screen.getAllByTestId("preview-panel");
+    const holas = screen.getAllByText("Good day");
+    expect(holas).toHaveLength(3);
   });
 
   it("there is a 1 line number when input is empty", async () => {
     render(<Page />);
-    expect(screen.queryAllByText("1")).toHaveLength(1);
+    expect(screen.queryAllByText("1")).toHaveLength(2);
   });
 
   it("adds a line number when user type", async () => {
     render(<Page />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getAllByRole("textbox")[0];
     input.focus();
     await user.keyboard("hola");
-    expect(screen.queryAllByText("1")).toHaveLength(1);
+    expect(screen.queryAllByText("1")).toHaveLength(2);
   });
 
   it("add a number if enter key is pressed in the texarea", async () => {
     render(<Page />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getAllByRole("textbox")[0];
     input.focus();
     await user.keyboard("[Enter]");
     expect(screen.queryAllByText("2")).toHaveLength(1);
@@ -73,7 +83,7 @@ describe("Editor view tests:", () => {
 
   it("input text is rendered in preview area as <p> element", async () => {
     render(<Page />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getAllByRole("textbox")[0];
     input.focus();
     await user.keyboard("hola");
     expect(screen.getAllByRole("paragraph")).toHaveLength(1);

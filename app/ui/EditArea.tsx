@@ -6,8 +6,9 @@ type Props = {
 };
 
 export default function EditArea({ onChange }: Props) {
-  const [value, setValue] = useState(" ");
-
+  const [value, setValue] = useState(
+    window.localStorage.getItem("markdown-content") || ""
+  );
   const [textAreaWidth, setTextAreaWidth] = useState(300);
 
   return (
@@ -37,6 +38,7 @@ export default function EditArea({ onChange }: Props) {
           onChange(e);
           setValue(e.target.value);
         }}
+        value={value}
         placeholder="Add your content here..."
       ></textarea>
     </div>
