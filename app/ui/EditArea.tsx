@@ -6,10 +6,14 @@ type Props = {
 };
 
 export default function EditArea({ onChange }: Props) {
-  const [value, setValue] = useState(
-    window.localStorage.getItem("markdown-content") || ""
-  );
-  const [textAreaWidth, setTextAreaWidth] = useState(300);
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("markdown-content");
+    if (saved) {
+      setValue(saved);
+    }
+  }, []);
 
   return (
     <div className="flex font-chivo">

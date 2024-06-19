@@ -1,14 +1,19 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Panel from "../ui/Panel";
 import PanelGroup from "../ui/PanelGroup";
 import EditArea from "../ui/EditArea";
 import PreviewArea from "../ui/previewArea";
 
 export default function Editor() {
-  const [markdown, setMarkdown] = useState(
-    window.localStorage.getItem("markdown-content") || ""
-  );
+  const [markdown, setMarkdown] = useState("");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("markdown-content");
+    if (saved) {
+      setMarkdown(saved);
+    }
+  }, []);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(e.target.value);
