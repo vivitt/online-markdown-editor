@@ -7,18 +7,18 @@ type Props = {
 };
 
 export default function PanelGroup(props: PropsWithChildren<Props>) {
-  const [className, setClassName] = useState("");
   const [currentPanel, setCurrentPanel] = useState("Edit");
 
   const handleClick = (e: React.UIEvent<HTMLButtonElement>) => {
-    const buttons = document.getElementsByTagName("button");
-    for (let i of buttons) {
-      i.setAttribute("aria-pressed", "false");
-      if (e.target === i) {
-        i.setAttribute("aria-pressed", "true");
-        setCurrentPanel(i.innerHTML);
+    const buttons = Array.from(document.getElementsByTagName("button"));
+    buttons.forEach((btn) => {
+      if (e.target === btn) {
+        btn.setAttribute("aria-pressed", "true");
+        setCurrentPanel(btn.innerHTML);
+      } else {
+        btn.setAttribute("aria-pressed", "false");
       }
-    }
+    });
   };
 
   useEffect(() => {
