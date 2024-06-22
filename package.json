@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest --no-watch",
+    "test": "vitest",
     "coverage": "vitest --coverage --no-watch",
     "prepare": "husky"
   },

@@ -16,11 +16,11 @@ export default function EditArea({ onChange }: Props) {
   }, []);
 
   return (
-    <div className="flex font-chivo">
+    <div className="flex px-3 font-chivo w-full">
       <div
         id="line-numbers"
         aria-hidden="true"
-        className="w-5 flex flex-col items-center px-5"
+        className="w-5 grid pr-3 text-slate-400"
       >
         {value.split("\n").length > 0 &&
           value.split("\n").map((el, index) => {
