@@ -4,29 +4,26 @@ exports[`Editor view tests: > renders editor view 1`] = `
 <div>
   <div>
     <div
-      aria-label="Edit or preview"
       class="flex"
-      role="toolbar"
     >
       <div
-        class="md:w-full"
+        class="w-full"
       >
-        <button
-          aria-pressed="true"
-          class="border-r border-t border-l bg-slate-200 text-slate-500 rounded-sm p-2 aria-pressed:bg-white aria-pressed:text-slate-900"
+        <h2
+          class="p-2 text-slate-600 text-xl border-l border-t border-r  bg-white rounded-sm inline-flex"
         >
           Edit
-        </button>
+        </h2>
         <div
-          class="border hidden md:flex"
+          class="border flex"
           data-testid="edit-panel"
         >
           <div
-            class="flex font-chivo"
+            class="flex px-3 font-chivo w-full"
           >
             <div
               aria-hidden="true"
-              class="w-5 flex flex-col items-center px-5"
+              class="w-5 grid pr-3 text-slate-400"
               id="line-numbers"
             >
               <span
@@ -47,50 +44,19 @@ exports[`Editor view tests: > renders editor view 1`] = `
         </div>
       </div>
       <div
-        class="md:w-full"
+        class="w-full"
       >
-        <button
-          class="border-r border-t border-l bg-slate-200 text-slate-500 rounded-sm p-2 aria-pressed:bg-white aria-pressed:text-slate-900"
+        <h2
+          class="p-2 text-slate-600 text-xl border-l border-t border-r  bg-white rounded-sm inline-flex"
         >
           Preview
-        </button>
+        </h2>
         <div
-          class="border hidden md:flex"
+          class="border flex"
           data-testid="preview-panel"
         >
           <div
             class="prose px-3 w-full bg-white h-screen"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="border md:hidden"
-    >
-      <div
-        class="bg-white"
-      >
-        <div
-          class="flex font-chivo"
-        >
-          <div
-            aria-hidden="true"
-            class="w-5 flex flex-col items-center px-5"
-            id="line-numbers"
-          >
-            <span
-              class="h-6"
-            >
-              1
-            </span>
-          </div>
-          <textarea
-            aria-autocomplete="list"
-            class="resize-none w-full h-screen focus:outline-0"
-            data-language="markdown"
-            id="edit"
-            name="edit"
-            placeholder="Add your content here..."
           />
         </div>
       </div>

@@ -1,7 +1,6 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, it, expect, spyOn, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
-
 import Page from "../app/editor/page";
 
 describe("Editor view tests:", () => {
@@ -25,6 +24,10 @@ describe("Editor view tests:", () => {
 });
 
 describe("Edit panel tests:", () => {
+  const user = userEvent.setup();
+  afterEach(cleanup);
+  localStorage.clear();
+
   it("renders edit panel", () => {
     render(<Page />);
     const editSection = screen.getByText("Edit");
@@ -47,7 +50,7 @@ describe("Edit panel tests:", () => {
 
   it("renders the first line number", async () => {
     render(<Page />);
-    expect(screen.queryAllByText("1")).toHaveLength(1);
+    expect(screen.getAllByText("1")).toHaveLength(1);
   });
 
   it("adds line numbers", async () => {

@@ -6,13 +6,23 @@ import Editor from "../app/editor/page";
 
 describe("Layout", () => {
   afterEach(cleanup);
-  test.only("renders a nav bar", () => {
+
+  test("renders a nav bar", () => {
     render(
       <Layout>
         <Page />
       </Layout>
     );
     expect(screen.getAllByRole("navigation")).toHaveLength(1);
+  });
+
+  test("doesn't renders buttons on home view", () => {
+    render(
+      <Layout>
+        <Page />
+      </Layout>
+    );
+    expect(screen.queryAllByRole("button")).toHaveLength(0);
   });
 
   test("renders a 'save' button on editor view", () => {

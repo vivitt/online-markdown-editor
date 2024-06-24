@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { PropsWithChildren } from "react";
+import useWindowWidth from "../lib/useWindowWidth";
 
 type Props = {
   panels: { id: string; header: string; content: ReactNode }[];
@@ -8,17 +9,11 @@ type Props = {
 
 export default function PanelGroup(props: PropsWithChildren<Props>) {
   const [currentPanel, setCurrentPanel] = useState("Edit");
+  const { width } = useWindowWidth();
 
   const handleClick = (e: React.UIEvent<HTMLButtonElement>) => {
     const buttons = Array.from(document.getElementsByTagName("button"));
-    buttons.forEach((btn) => {
-      if (e.target === btn) {
-        btn.setAttribute("aria-pressed", "true");
-        setCurrentPanel(btn.innerHTML);
-      } else {
-        btn.setAttribute("aria-pressed", "false");
-      }
-    });
+    setCurrentPanel(e.currentTarget.innerHTML);
   };
 
   useEffect(() => {
@@ -28,33 +23,47 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
 
   return (
     <div>
-      <div role="toolbar" aria-label="Edit or preview" className="flex">
-        {props.panels.map((child) => (
-          <div key={`${child.id}-panel`} className="md:w-full">
-            <button
-              onClick={(e) => handleClick(e)}
-              className="border-r border-t border-l bg-slate-200 text-slate-500 rounded-sm p-2 aria-pressed:bg-white aria-pressed:text-slate-900"
-              key={`${child.id}-button`}
-            >
-              {child?.header}
-            </button>
-
-            <div
-              className="border hidden md:flex"
-              data-testid={`${child.id}-panel`}
-            >
-              {child?.content}
+      {width && width > 800 ? (
+        <div className="flex">
+          {props.panels.map((child) => (
+            <div key={`${child.id}-panel`} className="w-full">
+              <h2 className="p-2 text-slate-600 text-xl border-l border-t border-r  bg-white rounded-sm inline-flex">
+                {child?.header}
+              </h2>
+              <div className="border flex" data-testid={`${child.id}-panel`}>
+                {child?.content}
+              </div>
             </div>
+          ))}
+        </div>
+      ) : (
+        <>
+          <div role="toolbar" aria-label="Edit or preview" className="flex">
+            {props.panels.map((child) => (
+              <div key={`${child.id}-panel`}>
+                <button
+                  onClick={(e) => handleClick(e)}
+                  className="border-r border-t border-l bg-slate-200 text-slate-500 rounded-sm p-2 aria-pressed:bg-white aria-pressed:text-slate-900"
+                  key={`${child.id}-button`}
+                  aria-pressed={currentPanel === child.header}
+                >
+                  {child?.header}
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="border md:hidden">
-        {props.panels.map((child) => {
-          if (currentPanel === child.header) {
-            return props.renderPanels(`${currentPanel}-panel`, child?.content);
-          }
-        })}
-      </div>
+          <div className="border">
+            {props.panels.map((child) => {
+              if (currentPanel === child.header) {
+                return props.renderPanels(
+                  `${currentPanel}-panel`,
+                  child?.content
+                );
+              }
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 }
