@@ -3,19 +3,34 @@
 exports[`Editor view tests: > renders editor view 1`] = `
 <div>
   <div>
+    <button
+      aria-pressed="true"
+    >
+      Save
+    </button>
+    <button>
+      New
+    </button>
+    <button>
+      Create a README file
+    </button>
+  </div>
+  <div
+    class="mt-2 border-t-2"
+  >
     <div
       class="flex"
     >
       <div
-        class="w-full"
+        class="w-full border"
       >
         <h2
-          class="p-2 text-slate-600 text-xl border-l border-t border-r  bg-white rounded-sm inline-flex"
+          class="p-2 m-2 text-slate-600 text-xl border bg-white rounded-sm inline-flex"
         >
           Edit
         </h2>
         <div
-          class="border flex"
+          class="flex"
           data-testid="edit-panel"
         >
           <div
@@ -44,15 +59,15 @@ exports[`Editor view tests: > renders editor view 1`] = `
         </div>
       </div>
       <div
-        class="w-full"
+        class="w-full border"
       >
         <h2
-          class="p-2 text-slate-600 text-xl border-l border-t border-r  bg-white rounded-sm inline-flex"
+          class="p-2 m-2 text-slate-600 text-xl border bg-white rounded-sm inline-flex"
         >
           Preview
         </h2>
         <div
-          class="border flex"
+          class="flex"
           data-testid="preview-panel"
         >
           <div

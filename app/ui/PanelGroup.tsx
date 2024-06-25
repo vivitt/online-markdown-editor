@@ -22,15 +22,16 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
   }, []);
 
   return (
-    <div>
+    <div className="mt-2 border-t-2">
       {width && width > 800 ? (
         <div className="flex">
           {props.panels.map((child) => (
-            <div key={`${child.id}-panel`} className="w-full">
-              <h2 className="p-2 text-slate-600 text-xl border-l border-t border-r  bg-white rounded-sm inline-flex">
+            <div key={`${child.id}-panel`} className="w-full border">
+              <h2 className="p-2 m-2 text-slate-600 text-xl border bg-white rounded-sm inline-flex">
                 {child?.header}
               </h2>
-              <div className="border flex" data-testid={`${child.id}-panel`}>
+
+              <div className="flex" data-testid={`${child.id}-panel`}>
                 {child?.content}
               </div>
             </div>

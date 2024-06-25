@@ -3,14 +3,13 @@ import { afterEach, describe, it, expect, spyOn, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import Page from "../app/editor/page";
 
+const getItemSpy = vi.spyOn(Storage.prototype, "getItem");
+const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
+const user = userEvent.setup();
+const LOCAL_STORAGE_KEY = "markdown-content";
+
 describe("Editor view tests:", () => {
-  const user = userEvent.setup();
-  const LOCAL_STORAGE_KEY = "markdown-content";
-
-  const getItemSpy = vi.spyOn(Storage.prototype, "getItem");
-  const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
   afterEach(cleanup);
-
   afterEach(() => {
     localStorage.clear();
     getItemSpy.mockClear();
@@ -73,6 +72,12 @@ describe("Edit panel tests:", () => {
 });
 
 describe("Preview panel tests:", () => {
+  afterEach(cleanup);
+  afterEach(() => {
+    localStorage.clear();
+    getItemSpy.mockClear();
+    setItemSpy.mockClear();
+  });
   it("renders preview panel", () => {
     render(<Page />);
     const previewSection = screen.getByText("Preview");

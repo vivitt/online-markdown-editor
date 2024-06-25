@@ -22,6 +22,11 @@ export default function Editor() {
 
   return (
     <>
+      <div>
+        <button>Save</button>
+        <button>New</button>
+        <button>Create a README file</button>
+      </div>
       <PanelGroup
         panels={[
           {
