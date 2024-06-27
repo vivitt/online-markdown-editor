@@ -102,7 +102,7 @@ describe("Preview panel tests:", () => {
     const input = screen.getByRole("textbox");
     input.focus();
     await user.keyboard("hola");
-    expect(screen.getByRole("paragraph")).toHaveLength(1);
+    expect(screen.getAllByRole("paragraph")).toHaveLength(1);
   });
 
   it("renders <h1> elements", async () => {
@@ -110,7 +110,7 @@ describe("Preview panel tests:", () => {
     const input = screen.getByRole("textbox");
     input.focus();
     await user.keyboard("# hola");
-    expect(screen.getByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   });
 
   it("renders <h2> elements", async () => {
@@ -118,7 +118,7 @@ describe("Preview panel tests:", () => {
     const input = screen.getByRole("textbox");
     input.focus();
     await user.keyboard("## hola");
-    expect(screen.getByRole("heading", { level: 2 })).toHaveLength(1);
+    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(3);
   });
 
   it("renders <h3> elements", async () => {
@@ -126,7 +126,7 @@ describe("Preview panel tests:", () => {
     const input = screen.getByRole("textbox");
     input.focus();
     await user.keyboard("### hola");
-    expect(screen.getByRole("heading", { level: 3 })).toHaveLength(1);
+    expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(1);
   });
 
   it("renders <h4> elements", async () => {
@@ -134,7 +134,7 @@ describe("Preview panel tests:", () => {
     const input = screen.getByRole("textbox");
     input.focus();
     await user.keyboard("#### hola");
-    expect(screen.getByRole("heading", { level: 4 })).toHaveLength(1);
+    expect(screen.getAllByRole("heading", { level: 4 })).toHaveLength(1);
   });
 
   it("renders <ul> elements", async () => {
@@ -144,14 +144,14 @@ describe("Preview panel tests:", () => {
     await user.keyboard("- hola");
     await user.keyboard("[Enter]");
     await user.keyboard("- chau");
-    expect(screen.getByRole("list")).toHaveLength(1);
+    expect(screen.getAllByRole("list")).toHaveLength(1);
   });
 
   it("renders <a> elements", async () => {
     render(<Page />);
     const input = screen.getByRole("textbox");
     input.focus();
-    await user.keyboard("[viviyanez.dev](https://www.viviyanez.dev");
-    expect(screen.getByRole("link")).toHaveLength(1);
+    await user.keyboard("[[viviyanez.dev]](https://www.viviyanez.dev)");
+    expect(screen.getAllByRole("link")).toHaveLength(1);
   });
 });

@@ -11,16 +11,24 @@ const config: Config = {
       backgroundImage: {
         "dot-pattern": "url('/dot.svg')",
       },
+      boxShadow: {
+        solid: "3px 3px 0px 1px",
+      },
+      animation: {
+        box: "move-box 100ms forwards",
+      },
+      keyframes: {
+        "move-box": {
+          to: { transform: "translateX(-3px) translateY(-2px)" },
+        },
+      },
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       chivo: ["Chivo", "mono"],
-      dm: ["DM", "serif"]
+      dm: ["DM", "serif"],
     },
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ],
-
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

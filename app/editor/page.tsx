@@ -22,10 +22,16 @@ export default function Editor() {
 
   return (
     <>
-      <div>
-        <button>Save</button>
-        <button>New</button>
-        <button>Create a README file</button>
+      <div className="flex justify-end">
+        <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
+          Save
+        </button>
+        <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
+          New
+        </button>
+        <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
+          Create a README file
+        </button>
       </div>
       <PanelGroup
         panels={[

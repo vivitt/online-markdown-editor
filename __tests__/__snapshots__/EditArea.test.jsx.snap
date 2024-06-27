@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`editor buttons > image button adds ![add alt text](paste image link) 1`] = `
+<div>
+  <div>
+    <button
+      aria-pressed="true"
+    >
+      Save
+    </button>
+    <button>
+      New
+    </button>
+    <button>
+      Create a README file
+    </button>
+  </div>
+  <div
+    class="mt-2 border-t-2"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="w-full border"
+      >
+        <h2
+          class="p-2 m-2 text-slate-600 text-xl border bg-white rounded-sm inline-flex"
+        >
+          Edit
+        </h2>
+        <div
+          class="flex"
+          data-testid="edit-panel"
+        >
+          <div
+            class="flex px-3 font-chivo w-full"
+          >
+            <div
+              aria-hidden="true"
+              class="w-5 grid pr-3 text-slate-400"
+              id="line-numbers"
+            >
+              <span
+                class="h-6"
+              >
+                1
+              </span>
+            </div>
+            <textarea
+              aria-autocomplete="list"
+              class="resize-none w-full h-screen focus:outline-0"
+              data-language="markdown"
+              id="edit"
+              name="edit"
+              placeholder="Add your content here..."
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full border"
+      >
+        <h2
+          class="p-2 m-2 text-slate-600 text-xl border bg-white rounded-sm inline-flex"
+        >
+          Preview
+        </h2>
+        <div
+          class="flex"
+          data-testid="preview-panel"
+        >
+          <div
+            class="prose px-3 w-full bg-white h-screen"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

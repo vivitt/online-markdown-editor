@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-inter">
-        <nav className="bg-slate-50 border-b ">
+        <nav>
           <ul className="flex items-center justify-between">
             <li className="p-2">
               <Link href="./">
@@ -23,11 +23,6 @@ export default function RootLayout({
                 <h1 className="font-dm text-2xl p-2">Beautiful Readme</h1>
               </Link>
             </li>
-            <div className="p-5">
-              <li>
-                <Link href="./editor">Editor</Link>
-              </li>
-            </div>
           </ul>
         </nav>
         <main>{children}</main>

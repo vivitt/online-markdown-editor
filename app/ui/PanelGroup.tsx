@@ -27,7 +27,7 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
         <div className="flex">
           {props.panels.map((child) => (
             <div key={`${child.id}-panel`} className="w-full border">
-              <h2 className="p-2 m-2 text-slate-600 text-xl border bg-white rounded-sm inline-flex">
+              <h2 className="m-2 text-slate-600 text-xl bg-white inline-flex border border-slate-600 rounded-md px-2 py-0.5 ">
                 {child?.header}
               </h2>
 
@@ -44,7 +44,7 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
               <div key={`${child.id}-panel`}>
                 <button
                   onClick={(e) => handleClick(e)}
-                  className="border-r border-t border-l bg-slate-200 text-slate-500 rounded-sm p-2 aria-pressed:bg-white aria-pressed:text-slate-900"
+                  className="m-2 text-slate-400 text-xl bg-slate-100 inline-flex border border-slate-300 rounded-md px-2 py-0.5 aria-pressed:bg-white aria-pressed:text-slate-600 aria-pressed:border-slate-600"
                   key={`${child.id}-button`}
                   aria-pressed={currentPanel === child.header}
                 >
