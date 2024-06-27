@@ -22,16 +22,16 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
   }, []);
 
   return (
-    <div className="mt-2 border-t-2">
+    <div className="mt-2">
       {width && width > 800 ? (
-        <div className="flex">
+        <div className="flex border-t">
           {props.panels.map((child) => (
-            <div key={`${child.id}-panel`} className="w-full border">
+            <div key={`${child.id}-panel`} className="w-full">
               <h2 className="m-2 text-slate-600 text-xl bg-white inline-flex border border-slate-600 rounded-md px-2 py-0.5 ">
                 {child?.header}
               </h2>
 
-              <div className="flex" data-testid={`${child.id}-panel`}>
+              <div className="flex border-t" data-testid={`${child.id}-panel`}>
                 {child?.content}
               </div>
             </div>
@@ -39,7 +39,11 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
         </div>
       ) : (
         <>
-          <div role="toolbar" aria-label="Edit or preview" className="flex">
+          <div
+            role="toolbar"
+            aria-label="Edit or preview"
+            className="flex border-t"
+          >
             {props.panels.map((child) => (
               <div key={`${child.id}-panel`}>
                 <button
@@ -53,7 +57,7 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
               </div>
             ))}
           </div>
-          <div className="border">
+          <div className="border-t">
             {props.panels.map((child) => {
               if (currentPanel === child.header) {
                 return props.renderPanels(

@@ -31,7 +31,7 @@ describe("Layout", () => {
         <Editor />
       </Layout>
     );
-    expect(screen.getByRole("button", { name: "Save" })).toHaveLength(1);
+    expect(screen.getAllByRole("button", { name: "Save" })).toHaveLength(1);
   });
 
   test("renders a 'new' button on editor view", () => {
@@ -40,7 +40,7 @@ describe("Layout", () => {
         <Editor />
       </Layout>
     );
-    expect(screen.getByRole("button", { name: "New" })).toHaveLength(1);
+    expect(screen.getAllByRole("button", { name: "New" })).toHaveLength(1);
   });
 
   test("renders a 'readme' button on editor view", () => {
@@ -50,7 +50,7 @@ describe("Layout", () => {
       </Layout>
     );
     expect(
-      screen.getByRole("button", { name: "Create a README file" })
+      screen.getAllByRole("button", { name: "Create a README file" })
     ).toHaveLength(1);
   });
 });
