@@ -20,6 +20,23 @@ describe("Editor view tests:", () => {
     const { container } = render(<Page />);
     expect(container).toMatchSnapshot();
   });
+
+  it("renders a 'save' button on editor view", () => {
+    render(<Page></Page>);
+    expect(screen.getAllByRole("button", { name: "Save" })).toHaveLength(1);
+  });
+
+  it("renders a 'new' button on editor view", () => {
+    render(<Page></Page>);
+    expect(screen.getAllByRole("button", { name: "New" })).toHaveLength(1);
+  });
+
+  it("renders a 'readme' button on editor view", () => {
+    render(<Page></Page>);
+    expect(
+      screen.getAllByRole("button", { name: "Create a README file" })
+    ).toHaveLength(1);
+  });
 });
 
 describe("Edit panel tests:", () => {

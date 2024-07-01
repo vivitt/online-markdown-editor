@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest --no-watch",
+    "test-watch": "vitest",
     "coverage": "vitest --coverage",
     "prepare": "husky",
     "lint-staged": "lint-staged"

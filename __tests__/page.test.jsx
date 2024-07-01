@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import Page from "../app/page";
 
 describe("Home", () => {
