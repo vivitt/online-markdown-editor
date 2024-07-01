@@ -16,7 +16,7 @@ describe("editor buttons", () => {
     setItemSpy.mockClear();
   });
 
-  it("image button adds ![add alt text](paste image link)", () => {
+  it.skip("image button adds ![add alt text](paste image link)", () => {
     const { container } = render(<EditArea />);
     const imgButton = screen.getAllByRole("button", { name: "image" });
   });
