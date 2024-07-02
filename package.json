@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest",
-    "coverage": "vitest --coverage --no-watch"
+    "test": "vitest --no-watch",
+    "test-watch": "vitest",
+    "coverage": "vitest --coverage",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.4",
-    "next": "^14.2.3",
+    "next": "^14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
@@ -33,10 +36,17 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "husky": "^9.0.11",
     "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.7",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
     "vitest": "^1.6.0"
+  },
+  "lint-staged": {
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
