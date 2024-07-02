@@ -1,7 +1,9 @@
 "use client";
+import React from "react";
 import { useEffect, useState } from "react";
 
 type Props = {
+  // eslint-disable-next-line no-unused-vars
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 

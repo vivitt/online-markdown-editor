@@ -1,9 +1,11 @@
+import React from "react";
 import { ReactNode, useEffect, useState } from "react";
 import { PropsWithChildren } from "react";
 import useWindowWidth from "../lib/useWindowWidth";
 
 type Props = {
   panels: { id: string; header: string; content: ReactNode }[];
+  // eslint-disable-next-line no-unused-vars
   renderPanels: (id: string, content: ReactNode) => React.JSX.Element;
 };
 
@@ -12,7 +14,6 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
   const { width } = useWindowWidth();
 
   const handleClick = (e: React.UIEvent<HTMLButtonElement>) => {
-    const buttons = Array.from(document.getElementsByTagName("button"));
     setCurrentPanel(e.currentTarget.innerHTML);
   };
 

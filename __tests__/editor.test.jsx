@@ -1,12 +1,11 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, it, expect, spyOn, vi } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, it, expect, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import Page from "../app/editor/page";
 
 const getItemSpy = vi.spyOn(Storage.prototype, "getItem");
 const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
 const user = userEvent.setup();
-const LOCAL_STORAGE_KEY = "markdown-content";
 
 describe("Editor view tests:", () => {
   afterEach(cleanup);
