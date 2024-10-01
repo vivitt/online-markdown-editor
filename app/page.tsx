@@ -12,7 +12,14 @@ export default function Home() {
             <span className="underline underline-offset-1">preview</span>
           </Link>
           <br />
-          markdown content.
+          markdown content
+          <br />&{" "}
+          <Link href="/editor">
+            <span className="underline underline-offset-1">create</span> nice
+            README
+          </Link>
+          <br />
+          files for your projects.
         </h1>
       </div>
     </>

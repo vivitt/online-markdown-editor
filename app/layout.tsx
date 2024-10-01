@@ -4,8 +4,9 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Beautiful Readme",
-  description: "Create nice readme files for your projects",
+  title: "Markdown Editor",
+  description:
+    "Comfortably edit and preview markdown content & create nice README files for your projects",
 };
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
             <li className="p-2">
               <Link href="./">
                 {" "}
-                <h1 className="font-dm text-2xl p-2">Beautiful Readme</h1>
+                <h1 className="font-dm text-4xl p-2">Markdown Editor</h1>
               </Link>
             </li>
           </ul>

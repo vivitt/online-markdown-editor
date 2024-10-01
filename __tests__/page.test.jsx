@@ -9,7 +9,7 @@ describe("Home", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Comfortably edit and preview markdown content.",
+        name: "Comfortably edit and preview markdown content & create nice README files for your projects.",
       })
     ).toBeDefined();
   });
