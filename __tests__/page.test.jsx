@@ -20,8 +20,4 @@ describe("Home", () => {
       screen.getByRole("link", { name: "edit and preview" })
     ).toBeDefined();
   });
-
-  test("editor's link navigate to editor route", async () => {
-    // TODO
-  });
 });

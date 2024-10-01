@@ -21,13 +21,21 @@ export default function Editor() {
     window.localStorage.setItem("markdown-content", e.target.value);
   };
 
+  const newDoc = () => {
+    setMarkdown("");
+    window.localStorage.setItem("markdown-content", "");
+  };
+
   return (
     <>
       <div className="flex justify-end">
         <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
           Save
         </button>
-        <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
+        <button
+          className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
+          onClick={() => newDoc()}
+        >
           New
         </button>
         <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
@@ -39,7 +47,9 @@ export default function Editor() {
           {
             id: "edit",
             header: "Edit",
-            content: <EditArea onChange={onChange}></EditArea>,
+            content: (
+              <EditArea onChange={onChange} markdown={markdown}></EditArea>
+            ),
           },
           {
             id: "preview",

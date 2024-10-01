@@ -59,6 +59,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
               class="resize-none w-full h-screen focus:outline-0"
               data-language="markdown"
               id="edit"
+              markdown=""
               name="edit"
               placeholder="Add your content here..."
             />
