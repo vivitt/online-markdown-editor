@@ -5,6 +5,7 @@ import Panel from "../ui/Panel";
 import PanelGroup from "../ui/PanelGroup";
 import EditArea from "../ui/EditArea";
 import PreviewArea from "../ui/previewArea";
+import { readmeTemplate } from "./readme-template";
 
 export default function Editor() {
   const [markdown, setMarkdown] = useState("");
@@ -26,6 +27,11 @@ export default function Editor() {
     window.localStorage.setItem("markdown-content", "");
   };
 
+  const newReadme = () => {
+    setMarkdown(readmeTemplate);
+    window.localStorage.setItem("markdown-content", readmeTemplate);
+  };
+
   return (
     <>
       <div className="flex justify-end">
@@ -38,7 +44,10 @@ export default function Editor() {
         >
           New
         </button>
-        <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
+        <button
+          className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
+          onClick={() => newReadme()}
+        >
           Create a README file
         </button>
       </div>

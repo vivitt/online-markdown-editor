@@ -1,12 +1,14 @@
-# Title
+export const readmeTemplate = `# Title
 
-<-- Add a brief description of your prject here -->
+<!--- Add a brief description of your prject here -->
 
-<--Optionally add a cover image for your readme -->
 
+<!--- Optionally add a cover image for your readme and uncomment this section
 <div align='center'>
 <img src='' alt='' width='600'/>
-</div>
+</div> -->
+
+
 
 ---
 
@@ -24,7 +26,7 @@
 
 Why does this project exist. Add some words about the motivation behind this porject and what it brings to the world.
 
-## Quick start: How to use Despiensa
+## Quick start: How to use this project
 
 How should this app be used.
 
@@ -47,3 +49,4 @@ Give a clear explanaiton of how seting up the prject for the first time. Rememeb
 Made by [Your name](Your portfolio/linkeding/github account).
 
 </div>
+`;
