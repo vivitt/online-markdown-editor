@@ -13,12 +13,12 @@ export default function EditArea({ onChange, markdown }: Props) {
       <div
         id="line-numbers"
         aria-hidden="true"
-        className="w-5 grid pr-3 text-slate-400"
+        className="w-5 grid pr-3 text-slate-400 text-base auto-rows-max"
       >
         {markdown.split("\n").length > 0 &&
           markdown.split("\n").map((el, index) => {
             return (
-              <span className="h-6" key={index + 1}>
+              <span className="" key={index + 1}>
                 {index + 1}
               </span>
             );
@@ -34,7 +34,7 @@ export default function EditArea({ onChange, markdown }: Props) {
         onChange={(e) => {
           onChange(e);
         }}
-        markdown={markdown}
+        value={markdown}
         placeholder="Add your content here..."
       ></textarea>
     </div>
