@@ -1,13 +1,10 @@
-export const readmeTemplate = `# Title
+export const readmeTemplate = `# Project Title
 
-<!--- Add a brief description of your prject here -->
-
-
-<!--- Optionally add a cover image for your readme and uncomment this section
 <div align='center'>
-<img src='' alt='' width='600'/>
-</div> -->
+  
+Add a brief description of your project.
 
+</div>
 
 
 ---
@@ -18,35 +15,41 @@ export const readmeTemplate = `# Title
 - [Quick start: How to use this project](#quick-start-how-to-use)
 - [Usage: Current features](#usage)
 - [Contributing to this project](#contributing-to-this-project)
-  - [Quick set up guide](#project-set-up)
+  - [Quick setup guide](#project-set-up)
+- [Attribution and license](#project-attributions)
 
 ---
 
 ## Motivation and project details
 
-Why does this project exist. Add some words about the motivation behind this porject and what it brings to the world.
+Why does this project exist? Add some words about the motivation behind this project and what it brings to the world.
 
 ## Quick start: How to use this project
 
-How should this app be used.
+How should people use this app/site?
 
 ## Usage: Current features
 
-What can users expect from using this project?
+What can people expect to find in this project?
 
 ## Contributing to this project
 
-Is this project open to contributions?
+Is this project open to contributions? What kind of contributions do you accept? Do you have a contributors guideline?
 
-### Project set up
+### Project setup
 
-Give a clear explanaiton of how seting up the prject for the first time. Rememeber to write from who know the less and optimize for who know the more.
+Add an explanation of how to set up the project for the first time.
+
+## Attribution and license
+You can add a license to your project. Additionally, you can mention the people who contributed to the project, the tools you used, and anyone else you want to give credit to.
 
 ---
 
 <div align='center'>
   
-Made by [Your name](Your portfolio/linkeding/github account).
+Made by [Your name](Your portfolio/LinkedIn/GitHub profile).
 
 </div>
+
+
 `;
