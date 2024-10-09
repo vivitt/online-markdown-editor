@@ -29,10 +29,10 @@ exports[`Editor view tests: > renders editor view 1`] = `
       class="mt-2"
     >
       <div
-        class="flex border-t"
+        class="flex border-t border-b min-h-screen"
       >
         <div
-          class="w-full border-l"
+          class="w-full border-l pb-1"
         >
           <h2
             class="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 "
@@ -69,7 +69,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
           </div>
         </div>
         <div
-          class="w-full border-l"
+          class="w-full border-l pb-1"
         >
           <h2
             class="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 "

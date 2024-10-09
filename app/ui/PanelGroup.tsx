@@ -25,9 +25,9 @@ export default function PanelGroup(props: PropsWithChildren<Props>) {
   return (
     <div className="mt-2">
       {width && width > 800 ? (
-        <div className="flex border-t">
+        <div className="flex border-t border-b min-h-screen">
           {props.panels.map((child) => (
-            <div key={`${child.id}-panel`} className="w-full border-l">
+            <div key={`${child.id}-panel`} className="w-full border-l pb-1">
               <h2 className="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 ">
                 {child?.header}
               </h2>
