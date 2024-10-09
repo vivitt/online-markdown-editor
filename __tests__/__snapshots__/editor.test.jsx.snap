@@ -3,83 +3,87 @@
 exports[`Editor view tests: > renders editor view 1`] = `
 <div>
   <div
-    class="flex justify-end"
-  >
-    <button
-      aria-pressed="true"
-      class="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
-    >
-      Save
-    </button>
-    <button
-      class="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
-    >
-      New
-    </button>
-    <button
-      class="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
-    >
-      Create a README file
-    </button>
-  </div>
-  <div
-    class="mt-2"
+    class="h-full"
   >
     <div
-      class="flex border-t"
+      class="flex justify-end"
+    >
+      <button
+        aria-pressed="true"
+        class="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
+      >
+        Save
+      </button>
+      <button
+        class="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
+      >
+        New
+      </button>
+      <button
+        class="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box"
+      >
+        Create a README file
+      </button>
+    </div>
+    <div
+      class="mt-2"
     >
       <div
-        class="w-full border-l"
+        class="flex border-t"
       >
-        <h2
-          class="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 "
-        >
-          Edit
-        </h2>
         <div
-          class="flex "
-          data-testid="edit-panel"
+          class="w-full border-l"
         >
+          <h2
+            class="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 "
+          >
+            Edit
+          </h2>
           <div
-            class="flex px-3 font-chivo w-full"
+            class="flex "
+            data-testid="edit-panel"
           >
             <div
-              aria-hidden="true"
-              class="w-5 grid pr-3 text-slate-400 text-base auto-rows-max"
-              id="line-numbers"
+              class="flex px-3 font-chivo w-full h-full"
             >
-              <span
-                class=""
+              <div
+                aria-hidden="true"
+                class="w-5 grid pr-3 text-slate-400 text-base auto-rows-max"
+                id="line-numbers"
               >
-                1
-              </span>
+                <span
+                  class=""
+                >
+                  1
+                </span>
+              </div>
+              <textarea
+                aria-autocomplete="list"
+                class="resize-none w-full focus:outline-0"
+                data-language="markdown"
+                id="edit"
+                name="edit"
+                placeholder="Add your content here..."
+              />
             </div>
-            <textarea
-              aria-autocomplete="list"
-              class="resize-none w-full h-screen focus:outline-0"
-              data-language="markdown"
-              id="edit"
-              name="edit"
-              placeholder="Add your content here..."
-            />
           </div>
         </div>
-      </div>
-      <div
-        class="w-full border-l"
-      >
-        <h2
-          class="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 "
-        >
-          Preview
-        </h2>
         <div
-          class="flex "
-          data-testid="preview-panel"
+          class="w-full border-l"
         >
+          <h2
+            class="m-2 text-slate-400 text-xl bg-white inline-flex border border-slate-300 rounded-md px-2 py-0.5 "
+          >
+            Preview
+          </h2>
           <div
-            class="prose px-3 w-full bg-white h-screen"
-          />
+            class="flex "
+            data-testid="preview-panel"
+          >
+            <div
+              class="prose px-3 w-full bg-white h-full"
+            />
+          </div>
         </div>
       </div>
     </div>

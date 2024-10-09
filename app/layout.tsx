@@ -28,7 +28,7 @@ export default function RootLayout({
           </ul>
         </nav>
         <main>{children}</main>
-        <footer className="fixed bottom-0 bg-slate-100 p-3 w-full flex flex-col items-center justify-center">
+        <footer className="bg-slate-100 p-3 w-full flex flex-col items-center justify-center">
           <p>
             Markdown Editor created with{" "}
             <span role="img" aria-label="love">

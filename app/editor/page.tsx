@@ -33,7 +33,7 @@ export default function Editor() {
   };
 
   return (
-    <>
+    <div className="h-full">
       <div className="flex justify-end">
         <button className="border border-black m-2 rounded-md px-2 py-0.5 hover:shadow-solid hover:animate-box">
           Save
@@ -70,6 +70,6 @@ export default function Editor() {
           return <Panel key={id}>{content}</Panel>;
         }}
       ></PanelGroup>
-    </>
+    </div>
   );
 }

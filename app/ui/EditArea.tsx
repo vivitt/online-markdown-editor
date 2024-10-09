@@ -9,7 +9,7 @@ type Props = {
 
 export default function EditArea({ onChange, markdown }: Props) {
   return (
-    <div className="flex px-3 font-chivo w-full">
+    <div className="flex px-3 font-chivo w-full h-full">
       <div
         id="line-numbers"
         aria-hidden="true"
@@ -30,7 +30,7 @@ export default function EditArea({ onChange, markdown }: Props) {
         name="edit"
         aria-autocomplete="list"
         data-language="markdown"
-        className="resize-none w-full h-screen focus:outline-0"
+        className="resize-none w-full focus:outline-0"
         onChange={(e) => {
           onChange(e);
         }}
