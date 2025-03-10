@@ -1,6 +1,9 @@
 name: Lint and test code on push
-on: push
-
+on:
+  push:
+    branches:
+      - main
+    
 jobs:
   run-tests-and-coverage:
     runs-on: ubuntu-latest
