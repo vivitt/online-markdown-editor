@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, it, expect, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
-import Page from "../app/editor/page";
+import Page from "../app/page";
 
 const getItemSpy = vi.spyOn(Storage.prototype, "getItem");
 const setItemSpy = vi.spyOn(Storage.prototype, "setItem");

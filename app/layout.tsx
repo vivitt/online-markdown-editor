@@ -22,7 +22,7 @@ export default function RootLayout({
             <li className="p-2">
               <Link href="./">
                 {" "}
-                <h1 className="font-dm text-4xl p-2">Markdown Editor</h1>
+                <h1 className="font-dm text-4xl p-2"><span aria-hidden>✎ </span>Markdown Editor</h1>
               </Link>
             </li>
           </ul>
