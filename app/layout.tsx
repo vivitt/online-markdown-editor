@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-inter">
+      <body className="font-inter relative">
         <nav>
           <ul className="flex items-center justify-between">
             <li className="p-2">
@@ -27,8 +27,8 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
-        <main>{children}</main>
-        <footer className="bg-slate-100 p-3 w-full flex flex-col items-center justify-center">
+        <main className="">{children}</main>
+        <footer className="bg-slate-100 p-3 w-full flex flex-col items-center fixed bottom-0 z-20">
           <p>
             Markdown Editor created with{" "}
             <span role="img" aria-label="love">

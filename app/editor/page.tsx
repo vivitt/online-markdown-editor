@@ -17,7 +17,7 @@ export default function Editor() {
     }
   }, []);
 
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLDivElement>) => {
     setMarkdown(e.target.value);
     window.localStorage.setItem("markdown-content", e.target.value);
   };
