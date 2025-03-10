@@ -29,7 +29,7 @@ exports[`Editor view tests: > renders editor view 1`] = `
       class="mt-2"
     >
       <div
-        class="flex border-t border-b min-h-screen"
+        class="flex border-t min-h-screen"
       >
         <div
           class="w-full border-l pb-1"
@@ -44,22 +44,14 @@ exports[`Editor view tests: > renders editor view 1`] = `
             data-testid="edit-panel"
           >
             <div
-              class="flex px-3 font-chivo w-full h-full"
+              class="flex px-3 font-chivo w-full h- mr-8 relative has-[:focus]:outline-2"
             >
               <div
-                aria-hidden="true"
-                class="w-5 grid pr-3 text-slate-400 text-base auto-rows-max"
-                id="line-numbers"
-              >
-                <span
-                  class=""
-                >
-                  1
-                </span>
-              </div>
+                class="resize-none w-full z-0 absolute m-0 p-0"
+              />
               <textarea
                 aria-autocomplete="list"
-                class="resize-none w-full focus:outline-0"
+                class="absolute resize-none w-full focus:outline-0 z-10 m-0 p-0 ml-8 h-screen"
                 data-language="markdown"
                 id="edit"
                 name="edit"
